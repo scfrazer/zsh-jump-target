@@ -17,6 +17,7 @@
     local target_choice
     local -A target_to_buffer_idx
     local start
+    region_highlight=()
     for (( buffer_idx = 1; buffer_idx <= $buffer_len; buffer_idx++ )); do
         if [[ ${BUFFER[$buffer_idx]} == $char ]]; then
             target_choice=${ZSH_JUMP_TARGET_CHOICES[target_idx]}
@@ -32,6 +33,7 @@
     done
 
     if (( target_idx == 1 )); then
+        region_highlight=("${orig_region_highlight[@]}")
         return 0
     fi
 
