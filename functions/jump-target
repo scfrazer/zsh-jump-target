@@ -23,7 +23,7 @@
         local start
         region_highlight=()
         while buffer_idx=${BUFFER[(ib:buffer_idx+1:)$char]}
-              (( buffer_idx <= $#BUFFER ))
+              (( buffer_idx > 0 && buffer_idx <= $#BUFFER ))
         do
             target_choice=${ZSH_JUMP_TARGET_CHOICES[target_idx]}
             BUFFER[buffer_idx]=$target_choice
