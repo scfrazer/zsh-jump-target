@@ -1,5 +1,5 @@
 # Jump to a character in the command line
-() {
+jump-target() {
     typeset -g ZSH_JUMP_TARGET_CHOICES
     typeset -g ZSH_JUMP_TARGET_STYLE
 
